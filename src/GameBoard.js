@@ -8,19 +8,20 @@ import './GameBoard.css';
 class GameBoard extends Component {
 
   render() {
+
     const colors = {
       green: '#7adaa2',
-      blue: '#e44949',
+      red: '#e44949',
       yellow: '#f0ef52',
-      red: '#40b5d3'
-    }
-    
+      blue: '#40b5d3'
+    };
+
     return (
       <div className="GameBoard">
-        <Square color='#7adaa2'/>
-        <Square color='#e44949'/>
-        <Square color='#f0ef52'/>
-        <Square color='#40b5d3'/>
+        <Square color={colors.green}/>
+        <Square color={colors.red}/>
+        <Square color={colors.yellow}/>
+        <Square color={colors.blue}/>
       </div>
     )
   }
