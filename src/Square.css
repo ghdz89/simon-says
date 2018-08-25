@@ -5,14 +5,17 @@
   margin: 1%;
 }
 
-.Square-pulse {
-  /*width: 200px;*/
-  animation-name: stretch;
-  animation-duration: 0.5s; 
+.Squarepulse {
+  display: inline-block;
+  width: 200px;
+  border-radius: 12%;
+  margin: 1%;
+  animation-name: pulse;
+  animation-duration: 0.25s; 
   animation-timing-function: ease-out; 
 }
 
-@keyframes stretch {
+@keyframes pulse {
   0% {
     transform: scale(1);
   }
