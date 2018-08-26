@@ -5,13 +5,13 @@
   margin: 1%;
 }
 
-.Squarepulse {
+.Square-pulse {
   display: inline-block;
   width: 200px;
   border-radius: 12%;
   margin: 1%;
   animation-name: pulse;
-  animation-duration: 0.25s; 
+  animation-duration: 0.2s; 
   animation-timing-function: ease-out; 
 }
 

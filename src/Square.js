@@ -2,23 +2,36 @@ import React, { Component } from 'react';
 import './Square.css';
 
 class Square extends Component {
+
   constructor(props){
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.pulseEnd = this.pulseEnd.bind(this);
     this.state = {
-      active: false
+      pulse: false
     };
   }
 
-  handleClick(){
-    const currentState = this.state.active;
-    this.setState({ active: !currentState });
+  componentDidMount() {
+    this.div.addEventListener('animationend', this.pulseEnd);
   }
 
+  componentWillUnmount () {
+    this.div.removeEventListener('animationend', this.pulseEnd);
+  }
+
+  pulseEnd() {
+    this.setState({pulse: false});
+  }
 
   render() {
+    const pulse = this.state.pulse;
+
     return (
-      <div className={this.state.active ? 'Squarepulse': 'Square'} style={{background: this.props.color}} onClick={this.handleClick}>
+      <div 
+        ref={div => this.div = div}
+        style={{background: this.props.color}}
+        onClick={() => this.setState({pulse: true})}
+        className={pulse ? 'Square-pulse' : 'Square'}>
       </div>
     );
   }
